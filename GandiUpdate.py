@@ -102,14 +102,17 @@ ipv4_lookups = [
 	"http://www.google.com"
 ]
 
-resolved_ips = list(map((lambda server: url_re(server, regexp_ipv4)), ipv4_lookups))
-resolved_ips = list(filter((lambda result: not not result and len(result) > 0), resolved_ips))
-my_ip = most_common(resolved_ips)
-
+# Check usage
 if len(sys.argv) < 4:
 	print("Usage:", sys.argv[0], " <apikey> <zonename> <subdomain>")
 	exit(0)
+
+# Get external IPs
+resolved_ips = list(map((lambda server: url_re(server, regexp_ipv4)), ipv4_lookups))
+resolved_ips = list(filter((lambda result: not not result and len(result) > 0), resolved_ips))
+my_ip = most_common(resolved_ips)
 	
+# Update
 apikey = sys.argv[1]
 zonename = sys.argv[2]
 records = [
