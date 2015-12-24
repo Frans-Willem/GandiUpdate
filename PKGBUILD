@@ -11,6 +11,7 @@ makedepends=()
 source=()
 md5sums=()
 install=GandiUpdate.install
+backup=('etc/sysconfig/GandiUpdate')
 
 package() {
 cd "${srcdir}/../"
