@@ -1,0 +1,5 @@
+post_install() {
+	echo "Please edit /etc/sysconfig/GandiUpdate,"
+	echo "issue 'systemctl enable GandiUpdate.timer',"
+	echo "and 'systemctl start GandiUpdate.timer' command manually"
+}

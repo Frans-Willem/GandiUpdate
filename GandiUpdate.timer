@@ -1,0 +1,11 @@
+[Unit]
+Description=Run GandiUpdate daily and on boot
+
+[Timer]
+OnBootSec=15m
+OnCalendar=daily
+Unit=GandiUpdate.service
+
+[Install]
+WantedBy=multi-user.target
+

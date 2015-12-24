@@ -1,0 +1,7 @@
+[Init]
+Description=GandiUpdate
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sysconfig/GandiUpdate
+ExecStart=/usr/local/bin/GandiUpdate.py "${Apikey}" "${Zonename}" "${Subdomain}"
